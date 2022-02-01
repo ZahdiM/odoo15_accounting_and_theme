@@ -5,7 +5,7 @@
             <t t-set="body_classname" t-value="'bg-100'"/>
             <t t-set="no_header" t-value="True"/>
             <t t-set="no_footer" t-value="True"/>
-            <div id="background" t-attf-style="background-image: url('#{background_src}'); background-color: #{background_color};">
+            <div class="background" t-attf-style="background-image: url('#{background_src}'); background-color: #{background_color};">
                 <div class="container body_login" style="height: 100%;">
                     <div id="bcard" t-attf-class="card border-0 mx-auto bg-100 {{login_card_classes}} o_database_list" style="float:left;">
                         <div class="card-body">
@@ -28,7 +28,7 @@
         </t>
     </template>
 
-    <template id="left_login_template" name="Left Login">
+    <template id="left_login_template" name="Login">
         <t t-call="fims_login_background_and_styles.left_login_layout">
             <form class="oe_login_form" role="form" t-attf-action="/web/login" method="post" onsubmit="this.action = '/web/login' + location.hash">
                 <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
